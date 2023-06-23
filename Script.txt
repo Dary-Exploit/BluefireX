@@ -1,0 +1,26 @@
+-- Obtén el servicio de notificaciones
+local NotificationService = game:GetService("NotificationService")
+
+
+local function createNotification(imageUrl, title, body)
+    local notificationId = tostring(os.time()) 
+    
+    
+    local notification = {
+        Title = title,
+        Text = body,
+        Icon = imageUrl,
+        Duration = 10, -- 10
+        Button1 = "Cerrar :3", 
+    }
+    
+    
+    NotificationService:CreateNotification(notificationId, notification)
+end
+
+
+local imageUrl = "https://i.imgur.com/QpifI49.png" 
+local title = "Hola!"
+local body = "BFX Se ha inyectado correctamente"
+
+createNotification(imageUrl, title, body)
